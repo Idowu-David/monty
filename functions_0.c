@@ -27,6 +27,7 @@ void push(stack_t **top, unsigned int line_number)
 		free_mem();
 		exit(EXIT_FAILURE);
 	}
+
 	new->n = atoi(val);
 	new->next = NULL;
 	new->prev = NULL;
@@ -50,11 +51,13 @@ void push(stack_t **top, unsigned int line_number)
  * @line_number: line number of the input file
  * Return: void
  */
+
 void pall(stack_t **top, unsigned int line_number)
 {
 	stack_t *ptr = NULL;
 
 	(void)(line_number);
+
 	ptr = *top;
 	while (ptr)
 	{
@@ -69,6 +72,7 @@ void pall(stack_t **top, unsigned int line_number)
  * @line_number: current line being read in input file
  * Return: nothing
  */
+
 void pint(stack_t **top, unsigned int line_number)
 {
 	if (*top == NULL)
@@ -86,12 +90,12 @@ void pint(stack_t **top, unsigned int line_number)
  * @line_number: line number of input file
  * Return: nothing
  */
+
 void pop(stack_t **top, unsigned int line_number)
 {
 	stack_t *ptr;
 
 	ptr = *top;
-
 	if (*top == NULL) /* empty stack */
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
@@ -116,6 +120,7 @@ void pop(stack_t **top, unsigned int line_number)
  * @line_number: line number of file being printed
  * Return: nothing
  */
+
 void swap(stack_t **top, unsigned int line_number)
 {
 	stack_t *ptr;
